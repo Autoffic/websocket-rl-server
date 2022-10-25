@@ -186,3 +186,5 @@ cython_debug/
 #.idea/
 
 bin
+*.cfg
+[Ss]hare
