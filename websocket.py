@@ -6,6 +6,11 @@ from predictnextconfig import predictNextConfiguration
 
 import json
 
+# To solve "Too many packets in payload error" 
+# see https://github.com/miguelgrinberg/python-engineio/issues/142 
+from engineio.payload import Payload
+Payload.max_decode_packets = 50
+
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -17,7 +22,7 @@ light_change_needed_event = "LIGHT_CHANGE_NEEDED_EVENT"
 next_config_ready_event = "NEXT_CONFIG_READY_EVENT"
 
 # whether to enable debugging
-debug = False
+debug = True
 
 @app.route("/")
 def main():
