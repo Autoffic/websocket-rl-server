@@ -31,8 +31,8 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
               "-E3_0", "-E3_1", "-E3_2"]
 
 
-    Various traffic light configuration correspondint to numbers.
-    The model will only output number correspondint to green,
+    Various traffic light configuration corresponding to numbers.
+    The model will only output number corresponding to green,
     it's up to the enviroment to set the yellow light
 
     <tlLogic id="J1" type="static" programID="0" offset="0">

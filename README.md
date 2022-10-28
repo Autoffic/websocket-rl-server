@@ -10,6 +10,6 @@ One way is to unblock the port, process may differ in different platforms. On wi
 
 ### ssh
 Another way is to connect via ssh and link to the server directly in clients. For this purpose, the server must host a ssh server too.<br>
-For linking through openssh: `ssh -L {client-port}:{server-ip}:{server-port} user@{server-ip}. <br>
+For linking through openssh: `ssh -L {client-port}:{server-ip}:{server-port} user@{server-ip}`. <br>
 Example: `ssh -L 5000:192.168.0.108:5000 user@192.168.0.108` <br>
 This links the server's port 5000 to clients ports 5000 so `localhost:5000` will connect to the server's port.
