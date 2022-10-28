@@ -55,4 +55,15 @@ def re_emit_event(received_data):
         #**************************************
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    '''
+    setting the host to "0.0.0.0" will expose the websocket over LAN properly
+        but setting it to localhost or setting it empty won't expose it over lan.
+
+        Also setting host to 0.0.0.0 will make it listen on all local ips regardless of the ip address ( if firewall allows it)
+        so, ideal way is to configure it to lan ip address if intended to use over LAN. (e.g. 192.168.0.108)
+
+    Here exposing doesn't mean dealing with the firewalls, the firewalls must be configured separately
+    '''
+    
+    socketio.run(app, debug=True, host="0.0.0.0")
+    
