@@ -9,11 +9,12 @@ import numpy
 import time
 
 # whether or not to enable debugging
-debug=True
+debug = True
 
 # to change to project relative paths and properly resolve paths in different platforms
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[0]  # traffic-intersection-rl-environment-sumo root directory
+# traffic-intersection-rl-environment-sumo root directory
+ROOT = FILE.parents[0]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
@@ -50,7 +51,8 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 '''
 
 models_path = Path(str(ROOT) + "/models").resolve()
-model_path = Path(str(models_path) + "/2022_08_26_20_31_22_136701_TrafficIntersection_TripleLaneGUI_ppo").resolve()
+model_path = Path(str(models_path) +
+                  "/2022_08_26_20_31_22_136701_TrafficIntersection_TripleLaneGUI_ppo").resolve()
 
 # the model for prediction
 model = PPO.load(str(model_path))
@@ -59,14 +61,17 @@ model = PPO.load(str(model_path))
 Takes in array of vehicles count in each lanes and
 returns the next predicted configuration
 '''
+
+
 def predictNextConfiguration(lanes_observation):
-    next_configuration, _state = model.predict(lanes_observation, deterministic=True)
+    next_configuration, _state = model.predict(
+        lanes_observation, deterministic=True)
 
     return next_configuration
 
 
 # random test code
-if __name__=="__main__":
+if __name__ == "__main__":
     number_of_lanes_to_observe = 12
 
     lanes_observation = numpy.zeros(number_of_lanes_to_observe, numpy.int32)
@@ -79,7 +84,7 @@ if __name__=="__main__":
     time_after_prediction = time.time()
 
     time_taken_for_prediction = time_after_prediction - time_before_prediction
-    
+
     if debug:
         print(f"\n The observation was: \
             {lanes_observation} \
