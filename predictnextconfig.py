@@ -90,4 +90,4 @@ if __name__ == "__main__":
             {lanes_observation} \
                 \n predicted configuration: \
             {next_config} \
-                \n Time taken: {time_taken_for_prediction}")
+                \n Time taken: {time_taken_for_prediction * 10e3}ms")
