@@ -52,7 +52,7 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 models_path = Path(str(ROOT) + "/models").resolve()
 model_path = Path(str(models_path) +
-                  "/2022-12-01 13 30 28.862329-TrafficIntersection-TripleLaneGUI-ppo-1775000").resolve()
+                  "/2023-10-16 07_05_17.020452-TrafficIntersection-TripleLaneGUI-ppo_exit_before_finished.zip").resolve()
 
 # the model for prediction
 model = PPO.load(str(model_path))

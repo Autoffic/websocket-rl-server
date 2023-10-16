@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Flask-SocketIO
+numpy
+pandas
+python-socketio
+stable-baselines3
+torch
